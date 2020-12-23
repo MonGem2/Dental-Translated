@@ -1,0 +1,46 @@
+﻿<Page Loaded="Page_Loaded" x:Class="Dental.Depth"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dental"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Depts/Prepayments">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid Height="25" Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Add debt" Grid.Column="2" Click="AddDepth"/>
+                <Button Content="Pay the debt off" Grid.Column="3" Click="Pay_the_debt_off"/>
+                <Button Content="Add prepayment" Grid.Column="4" Click="Add_Pered"/>
+                <Button Content="Accept prepayment" Grid.Column="5" Click="Accept_prepayment"/>
+                <Button Content="⨉" Grid.Column="6" Background="IndianRed" Click="Button_Click"/>
+            </Grid>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="View" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" MouseDoubleClick="OpenPatient">
+        </DataGrid>
+        <DataGrid Grid.Row="1" Name="View1" Grid.Column="1" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" MouseDoubleClick="Open_Patient">
+        </DataGrid>
+        <Label Grid.Row="2" Content="Depts" HorizontalContentAlignment="Center" FontSize="18"/>
+        
+        <Label Grid.Row="2" Grid.Column="1" Content="Prepayments" HorizontalContentAlignment="Center" FontSize="18"/>
+    </Grid>
+</Page>

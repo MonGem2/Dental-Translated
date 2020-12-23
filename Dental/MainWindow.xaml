@@ -1,0 +1,48 @@
+﻿<Window x:Class="Dental.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dental"
+        mc:Ignorable="d"
+        Title="Dental" Height="600" Width="1000">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" ShowGridLines="True" Name="grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="35*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="0,0,0,250" Background="WhiteSmoke">
+                <Grid Background="WhiteSmoke">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Registry" Foreground="#FF090068" FontSize="16"/>
+                    <Button Content="Patients" Foreground="#FF090068" Grid.Row="1" HorizontalContentAlignment="Left" Background="WhiteSmoke" BorderThickness="0" Click="Patients_Click"/>
+                    <Button Content="New card" Foreground="#FF090068" Grid.Row="2" HorizontalContentAlignment="Left" Background="WhiteSmoke" BorderThickness="0" Click="AddCard_Click"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Margin="0,90,0,200" Background="WhiteSmoke">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Cashier" Foreground="#FF090068" FontSize="16"/>
+                    <Button Content="Debts/Prepayments" Foreground="#FF090068" Grid.Row="1" HorizontalContentAlignment="Left" Background="WhiteSmoke" BorderThickness="0" Click="Depth_Click"/>
+                    <Button Content="Transactions" Foreground="#FF090068" Grid.Row="2" HorizontalContentAlignment="Left" Background="WhiteSmoke" BorderThickness="0" Click="Transaction_Click"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
