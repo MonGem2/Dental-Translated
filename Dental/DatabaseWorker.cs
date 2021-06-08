@@ -226,7 +226,7 @@ namespace Dental
         {
             con.Close();
         }
-        public static void InsertTransaction(string Price, string Descr, string Id_Pat, string Date, string Type= "Добавлен долг")
+        public static void InsertTransaction(string Price, string Descr, string Id_Pat, string Date, string Type= "Added Dept")
         {
 
             string query1 = $"insert into [Transactions] (Suma,Description,id_Patient,Date,Type) values ('{Price}','{Descr}','{Id_Pat}','{Date}','{Type}')";
@@ -301,7 +301,7 @@ namespace Dental
                     if (dataReader.GetString(0) != tmp)
                     {
                         
-                        Rez += "Дата: " + dataReader.GetString(0) + "\n";
+                        Rez += "Date: " + dataReader.GetString(0) + "\n";
                         text = $"Select [Description] From [Treatment] where id_Patient='{id}' and Date='{dataReader.GetString(0)}'";
 
                         try
@@ -312,7 +312,7 @@ namespace Dental
                             while (dataReader1.Read())
                             {
                                
-                                Rez += "Описание: " + dataReader1.GetString(0) + "\n";
+                                Rez += "Description: " + dataReader1.GetString(0) + "\n";
                                 text = $"Select [Price] From [Treatment] where id_Patient='{id}' and Date='{dataReader.GetString(0)}' and Description='{dataReader1.GetString(0)}'";
                                 try
                                 {                                                                       
@@ -320,7 +320,7 @@ namespace Dental
                                     SQLiteDataReader dataReader2 = comand2.ExecuteReader();
                                     while (dataReader2.Read())
                                     {
-                                        Rez += "Цена: " + dataReader2.GetDouble(0).ToString() + "\n";
+                                        Rez += "Price: " + dataReader2.GetDouble(0).ToString() + "\n";
                                     }
                                     Rez += "\n";
                                 }
@@ -408,10 +408,10 @@ namespace Dental
             SQLiteDataReader dataReader = comand.ExecuteReader();
             while (dataReader.Read())
             {
-                res.Add("Дата:"+dataReader.GetString(0));
-                res.Add("Тип:"+dataReader.GetString(1));
-                res.Add("Сума:"+dataReader.GetValue(2).ToString());
-                res.Add("Описание:"+dataReader.GetString(3)+"\n");
+                res.Add("Date:"+dataReader.GetString(0));
+                res.Add("Type:"+dataReader.GetString(1));
+                res.Add("Amount:"+dataReader.GetValue(2).ToString());
+                res.Add("Description:"+dataReader.GetString(3)+"\n");
             }
             return res;
         }
